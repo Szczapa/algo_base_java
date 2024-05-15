@@ -35,15 +35,9 @@ public class Main {
             }
 
             switch (number) {
-                case 1:
-                    Variables.courVariable();
-                    break;
-                case 2:
-                    Interaction.courInteraction();
-                    break;
-                default:
-                    System.out.println(Translations.Notify("cours " + number + " non trouvé.", "error"));
-                    break;
+                case 1 -> Variables.courVariable();
+                case 2 -> Interaction.courInteraction();
+                default -> System.out.println(Translations.Notify("cours " + number + " non trouvé.", "error"));
             }
         } else if (letter == 'e') {
             System.out.println(Translations.resultNotify("exercice_selection", "info"));
@@ -66,42 +60,18 @@ public class Main {
                 return;
             }
             switch (number) {
-                case 1:
-                    Variables.exercice1();
-                    break;
-                case 2:
-                    Variables.exercice2();
-                    break;
-                case 3:
-                    Variables.exercice3();
-                    break;
-                case 4:
-                    Interaction.exercice4();
-                    break;
-                case 5:
-                    Interaction.exercice5();
-                    break;
-                case 6:
-                    Interaction.exercice6();
-                    break;
-                case 7:
-                    Interaction.exercice7();
-                    break;
-                case 8:
-                    Interaction.exercice8();
-                    break;
-                case 9:
-                    Interaction.exercice9();
-                    break;
-                case 10:
-                    Boucle.exercice10();
-                    break;
-                case 11:
-                    Boucle.exercice11();
-                    break;
-                default:
-                    System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
-                    break;
+                case 1 -> Variables.exercice1();
+                case 2 -> Variables.exercice2();
+                case 3 -> Variables.exercice3();
+                case 4 -> Interaction.exercice4();
+                case 5 -> Interaction.exercice5();
+                case 6 -> Interaction.exercice6();
+                case 7 -> Interaction.exercice7();
+                case 8 -> Interaction.exercice8();
+                case 9 -> Interaction.exercice9();
+                case 10 -> Boucle.exercice10();
+                case 11 -> Boucle.exercice11();
+                default -> System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
             }
         } else {
             System.out.println(Translations.Notify("lettre " + letter + " non reconnue.", "error"));
