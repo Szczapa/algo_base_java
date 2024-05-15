@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.cours_variables.Boucle;
 import org.example.cours_variables.Interaction;
 import org.example.cours_variables.Variables;
+import org.example.local.Translations;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -12,7 +14,7 @@ public class Main {
         char letter;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("entrer la lettre pour du cours ou de l'exercice (c/e)");
+        System.out.println(Translations.resultNotify("menu", "info"));
         try {
             letter = scanner.next().charAt(0);
         } catch (InputMismatchException e) {
@@ -21,14 +23,14 @@ public class Main {
         }
 
         if (letter == 'c') {
-            System.out.println("Sommaire des cours:");
-            System.out.println("1. Variables");
-            System.out.println("2. Interaction");
-            System.out.println("Entrer le numéro du cours:");
+            System.out.println(Translations.resultNotify("cours", "info"));
+            System.out.println(Translations.resultNotify("cours_1", "choice"));
+            System.out.println(Translations.resultNotify("cours_2", "choice"));
+            System.out.println(Translations.resultNotify("cours_selection", "info"));
             try {
                 number = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Veuillez entrer un nombre entier.");
+                System.out.println(Translations.resultNotify("entier", "error"));
                 return;
             }
 
@@ -40,22 +42,27 @@ public class Main {
                     Interaction.courInteraction();
                     break;
                 default:
-                    System.out.println("cours" + number + "non trouvé.");
+                    System.out.println(Translations.Notify("cours " + number + " non trouvé.", "error"));
                     break;
             }
         } else if (letter == 'e') {
-            System.out.println("Sommaire des exercices:");
-            System.out.println("1. Variables basiques");
-            System.out.println("2. Variables non échangées");
-            System.out.println("3. Variables inversées");
-            System.out.println("4. Divisible par 3");
-            System.out.println("5. calcul prix Photocopie");
-            System.out.println("6. calcul d'interet bancaire");
-            System.out.println("Entrer le numéro d'exercice:");
+            System.out.println(Translations.resultNotify("exercice_selection", "info"));
+            System.out.println(Translations.resultNotify("exercice_1", "choice"));
+            System.out.println(Translations.resultNotify("exercice_2", "choice"));
+            System.out.println(Translations.resultNotify("exercice_3", "choice"));
+            System.out.println(Translations.resultNotify("exercice_4", "choice"));
+            System.out.println(Translations.resultNotify("exercice_5", "choice"));
+            System.out.println(Translations.resultNotify("exercice_6", "choice"));
+            System.out.println(Translations.resultNotify("exercice_7", "choice"));
+            System.out.println(Translations.resultNotify("exercice_8", "choice"));
+            System.out.println(Translations.resultNotify("exercice_9", "choice"));
+            System.out.println(Translations.resultNotify("exercice_10", "choice"));
+            System.out.println(Translations.resultNotify("exercice_11", "choice"));
+            System.out.println(Translations.resultNotify("exercice_selection", "info"));
             try {
                 number = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Veuillez entrer un nombre entier.");
+                System.out.println(Translations.resultNotify("entier", "error"));
                 return;
             }
             switch (number) {
@@ -77,12 +84,27 @@ public class Main {
                 case 6:
                     Interaction.exercice6();
                     break;
+                case 7:
+                    Interaction.exercice7();
+                    break;
+                case 8:
+                    Interaction.exercice8();
+                    break;
+                case 9:
+                    Interaction.exercice9();
+                    break;
+                case 10:
+                    Boucle.exercice10();
+                    break;
+                case 11:
+                    Boucle.exercice11();
+                    break;
                 default:
-                    System.out.println("Exercice" + number + "non trouvé.");
+                    System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
                     break;
             }
         } else {
-            System.out.println("Lettre non reconnue.");
+            System.out.println(Translations.Notify("lettre " + letter + " non reconnue.", "error"));
         }
     }
 }
