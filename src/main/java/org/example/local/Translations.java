@@ -9,10 +9,11 @@ public class Translations {
     public static Map<String, String> success;
     public static Map<String, String> choice;
 
-    public static String greenTextCode = "\033[32m";
-    public static String redTextCode = "\033[31m";
-    public static String yellowTextCode = "\033[33m";
-    public static String blueTextCode = "\033[34m";
+    public static final String greenTextCode = "\033[32m";
+    public static final String redTextCode = "\033[31m";
+    public static final String yellowTextCode = "\033[33m";
+    public static final String blueTextCode = "\033[34m";
+    public static final String resetTextCode = "\033[0m";
 
     static {
         success = new HashMap<>();
@@ -53,10 +54,10 @@ public class Translations {
 
     public static String interactNotify(String textName, String textType) {
         String text = switch (textType) {
-            case "error" -> redTextCode + error.get(textName);
-            case "info" -> yellowTextCode + info.get(textName);
-            case "success" -> greenTextCode + success.get(textName);
-            case "choice" -> blueTextCode + choice.get(textName);
+            case "error" -> redTextCode + error.get(textName) +resetTextCode;
+            case "info" -> yellowTextCode + info.get(textName) +resetTextCode;
+            case "success" -> greenTextCode + success.get(textName) +resetTextCode;
+            case "choice" -> blueTextCode + choice.get(textName) +resetTextCode;
             default -> redTextCode + "Erreur internes";
         };
         return text;
@@ -65,10 +66,10 @@ public class Translations {
     public static String Notify(String textContent, String textType) {
         String text = null;
         switch (textType) {
-            case "error" -> text = redTextCode + textContent;
-            case "info" -> text = yellowTextCode + textContent;
-            case "success" -> text = greenTextCode + textContent;
-            case "choice" -> text = blueTextCode + textContent;
+            case "error" -> text = redTextCode + textContent +resetTextCode;
+            case "info" -> text = yellowTextCode + textContent +resetTextCode;
+            case "success" -> text = greenTextCode + textContent +resetTextCode;
+            case "choice" -> text = blueTextCode + textContent +resetTextCode;
         }
         return text;
     }
