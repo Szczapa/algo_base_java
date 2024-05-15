@@ -1,4 +1,4 @@
-package org.example.cours_variables;
+﻿package org.example.cours_variables;
 
 import org.example.local.Translations;
 
@@ -166,8 +166,8 @@ public class Interaction {
 
     public static void exercice8() {
         double ab, ba;
-        double bc, cb;
-        double ac, ca;
+        double bc;
+        double ac;
         Scanner scanner = new Scanner(System.in);
         System.out.println(Translations.Notify("Entrer la longueur du côté AB:", "info"));
         try {
@@ -185,35 +185,24 @@ public class Interaction {
         }
         System.out.println(Translations.Notify("Entrer la longueur du côté CA:", "info"));
         try {
-            ca = scanner.nextDouble();
+            ac = scanner.nextDouble();
         } catch (InputMismatchException e) {
             System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
-        ac = ca;
-        ba = ab;
-        cb = bc;
 
-        if (ab == ac) {
-            if (ab == bc) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
+        if(ab == bc){
+            if(bc == ac){
+                System.out.println(Translations.Notify("Le triangle est équilatéral", "success"));
             } else {
-                System.out.println(Translations.Notify("Isocèle en A mais pas équilatérale", "success"));
+                System.out.println(Translations.Notify("Le triangle est isocèle en b", "success"));
             }
-        } else if (bc == ba) {
-            if (bc == ca) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
-            } else {
-                System.out.println(Translations.Notify("Isocèle en B mais pas équilatérale", "success"));
-            }
-        } else if (cb == ca) {
-            if (cb == ab) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
-            } else {
-                System.out.println(Translations.Notify("Isocèle en C mais pas équilatérale", "success"));
-            }
+        } else if (bc == ac){
+            System.out.println(Translations.Notify("Le triangle est isocèle en c", "success"));
+        } else if (ab == ac){
+            System.out.println(Translations.Notify("Le triangle est isocèle en a", "success"));
         } else {
-            System.out.println(Translations.Notify("Le triangle n'est pas équilatérale", "success"));
+            System.out.println(Translations.Notify("Le triangle n'est pas isocèle en A, B, C", "success"));
         }
     }
 
@@ -235,18 +224,9 @@ public class Interaction {
             System.out.println(Translations.interactNotify("erreur_saisie", "error"));
             return;
         }
-        // taille 1 -> 145 to 169 cm && 43 to 65 Kg
-        // taille 2 -> 160 to 178 cm && 48 to 71 kg
-        // taille 3 -> 163 to 183 cm && 54 to 77 kg
+        // taille 1 = taille 145 to 169 cm && masse 43 to 65 Kg
+        // taille 2 -> taille 160 to 178 cm && masse 48 to 71 kg
+        // taille 3 -> taille 163 to 183 cm && masse 54 to 77 kg
 
-        if ((taille >= 145 && taille <= 169) && (masse >= 43 && masse <= 65)) {
-            System.out.println(Translations.Notify("Taille 1", "success"));
-        } else if ((taille >= 160 && taille <= 178) && (masse >= 48 && masse <= 71)) {
-            System.out.println(Translations.Notify("Taille 2", "success"));
-        } else if ((taille >= 163 && taille <= 183) && (masse >= 54 && masse <= 77)) {
-            System.out.println(Translations.Notify("Taille 3", "success"));
-        } else {
-            System.out.println(Translations.Notify("Taille non reconnue", "error"));
-        }
     }
 }
