@@ -38,6 +38,7 @@ public class Interaction {
             number = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Veuillez entrer un nombre entier.");
+            scanner.nextLine();
             return;
         }
         System.out.println("vous avez entré le nombre: " + number);
@@ -66,7 +67,7 @@ public class Interaction {
         if (number < 10) {
             finalPrice = number * basePrice;
             System.out.println("Le prix total est de: " + finalPrice);
-        } else if (number >= 10 && number <= 20) {
+        } else if (number <= 20) {
             finalPrice = number * (basePrice - reduction);
             System.out.println("Le prix total est de: " + finalPrice + "€ avec un cout de 0.4€ par photocopie");
         } else {
@@ -74,6 +75,7 @@ public class Interaction {
             System.out.println("Le prix total est de: " + finalPrice + "€ avec un cout de 0.3€ par photocopie");
         }
         scanner.close();
+
     }
 
     public static void exercice6() {
@@ -98,7 +100,7 @@ public class Interaction {
             annee = scanner.nextDouble();
             System.out.println("le nombre d'année est de " + annee);
         } catch (InputMismatchException e) {
-            System.out.println("Veuillez entrer un nombre entier.");
+            System.out.println("Veuillez entrer un nombre.");
             return;
         }
         gain = capital * Math.pow(1 + taux, annee);
