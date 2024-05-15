@@ -24,7 +24,7 @@ public class Boucle {
 
     public static void exercice11() {
         double capital;
-        int i = 0;
+        int annee = 0;
         double capitalFinal = 0;
         double taux = 0.04;
         Scanner scanner = new Scanner(System.in);
@@ -37,10 +37,10 @@ public class Boucle {
             return;
         }
         while (capital * 2 > capitalFinal) {
-            i++;
-            capitalFinal = capital * Math.pow(1 + taux, i);
+            annee++;
+            capitalFinal = capital * Math.pow(1 + taux, annee);
         }
         capitalFinal = Math.round(capitalFinal * 100.0) / 100.0;
-        System.out.println(Translations.Notify("Le capital sera doublé en " + i + " années.", "success"));
+        System.out.println(Translations.Notify("Le capital sera doublé en " + annee + " années.", "success"));
     }
 }
