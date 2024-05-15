@@ -52,7 +52,7 @@ public class Translations {
 
     }
 
-    public static String resultNotify(String textName, String textType) {
+    public static String interactNotify(String textName, String textType) {
         String text = switch (textType) {
             case "error" -> redTextCode + error.get(textName);
             case "info" -> yellowTextCode + info.get(textName);

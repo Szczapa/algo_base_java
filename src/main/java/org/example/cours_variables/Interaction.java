@@ -39,7 +39,7 @@ public class Interaction {
         try {
             number = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("entier", "error"));
+            System.out.println(Translations.interactNotify("entier", "error"));
             scanner.nextLine();
             return;
         }
@@ -62,7 +62,7 @@ public class Interaction {
         try {
             number = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("entier", "error"));
+            System.out.println(Translations.interactNotify("entier", "error"));
             return;
         }
         if (number < 10) {
@@ -91,7 +91,7 @@ public class Interaction {
             capital = scanner.nextDouble();
             System.out.println(Translations.Notify("le capital de départ est de " + capital + "€", "info"));
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("nombre", "error"));
+            System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
         scanner.nextLine();
@@ -100,7 +100,7 @@ public class Interaction {
             annee = scanner.nextDouble();
             System.out.println(Translations.Notify("le nombre d'année est de " + annee, "info"));
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("nombre", "error"));
+            System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
         gain = capital * Math.pow(1 + taux, annee);
@@ -116,7 +116,7 @@ public class Interaction {
         try {
             age = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("entier", "error"));
+            System.out.println(Translations.interactNotify("entier", "error"));
             return;
         }
         if (age >= 3 && age <= 6) {
@@ -141,21 +141,21 @@ public class Interaction {
         try {
             ab = scanner.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("nombre", "error"));
+            System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
         System.out.println(Translations.Notify("Entrer la longueur du côté BC:", "info"));
         try {
             bc = scanner.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("nombre", "error"));
+            System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
         System.out.println(Translations.Notify("Entrer la longueur du côté CA:", "info"));
         try {
             ca = scanner.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("nombre", "error"));
+            System.out.println(Translations.interactNotify("nombre", "error"));
             return;
         }
         ac = ca;
@@ -193,14 +193,14 @@ public class Interaction {
         try {
             masse = scanner.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("erreur_saisie", "error"));
+            System.out.println(Translations.interactNotify("erreur_saisie", "error"));
             return;
         }
         System.out.println(Translations.Notify("Entrer la taille en cm:", "info"));
         try {
             taille = scanner.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify("erreur_saisie", "error"));
+            System.out.println(Translations.interactNotify("erreur_saisie", "error"));
             return;
         }
         // taille 1 -> 145 to 169 cm && 43 to 65 Kg

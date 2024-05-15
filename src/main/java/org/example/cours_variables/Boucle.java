@@ -15,7 +15,7 @@ public class Boucle {
             try {
                 number = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(Translations.resultNotify("entier", "error"));
+                System.out.println(Translations.interactNotify("entier", "error"));
                 scanner.next();
             }
         } while (number < 1 || number > 3);
@@ -33,7 +33,7 @@ public class Boucle {
             capital = scanner.nextDouble();
             System.out.println(Translations.Notify("le capital de départ est de " + capital + "€", "info"));
         } catch (InputMismatchException e) {
-            System.out.println(Translations.resultNotify(("nombre"), "error"));
+            System.out.println(Translations.interactNotify(("nombre"), "error"));
             return;
         }
         while (capital * 2 > capitalFinal) {

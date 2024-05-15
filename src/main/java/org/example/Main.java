@@ -14,7 +14,7 @@ public class Main {
         char letter;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(Translations.resultNotify("menu", "info"));
+        System.out.println(Translations.interactNotify("menu", "info"));
         try {
             letter = scanner.next().charAt(0);
         } catch (InputMismatchException e) {
@@ -23,14 +23,14 @@ public class Main {
         }
 
         if (letter == 'c') {
-            System.out.println(Translations.resultNotify("cours", "info"));
-            System.out.println(Translations.resultNotify("cours_1", "choice"));
-            System.out.println(Translations.resultNotify("cours_2", "choice"));
-            System.out.println(Translations.resultNotify("cours_selection", "info"));
+            System.out.println(Translations.interactNotify("cours", "info"));
+            System.out.println(Translations.interactNotify("cours_1", "choice"));
+            System.out.println(Translations.interactNotify("cours_2", "choice"));
+            System.out.println(Translations.interactNotify("cours_selection", "info"));
             try {
                 number = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(Translations.resultNotify("entier", "error"));
+                System.out.println(Translations.interactNotify("entier", "error"));
                 return;
             }
 
@@ -40,23 +40,23 @@ public class Main {
                 default -> System.out.println(Translations.Notify("cours " + number + " non trouvé.", "error"));
             }
         } else if (letter == 'e') {
-            System.out.println(Translations.resultNotify("exercice_selection", "info"));
-            System.out.println(Translations.resultNotify("exercice_1", "choice"));
-            System.out.println(Translations.resultNotify("exercice_2", "choice"));
-            System.out.println(Translations.resultNotify("exercice_3", "choice"));
-            System.out.println(Translations.resultNotify("exercice_4", "choice"));
-            System.out.println(Translations.resultNotify("exercice_5", "choice"));
-            System.out.println(Translations.resultNotify("exercice_6", "choice"));
-            System.out.println(Translations.resultNotify("exercice_7", "choice"));
-            System.out.println(Translations.resultNotify("exercice_8", "choice"));
-            System.out.println(Translations.resultNotify("exercice_9", "choice"));
-            System.out.println(Translations.resultNotify("exercice_10", "choice"));
-            System.out.println(Translations.resultNotify("exercice_11", "choice"));
-            System.out.println(Translations.resultNotify("exercice_selection", "info"));
+            System.out.println(Translations.interactNotify("exercice_selection", "info"));
+            System.out.println(Translations.interactNotify("exercice_1", "choice"));
+            System.out.println(Translations.interactNotify("exercice_2", "choice"));
+            System.out.println(Translations.interactNotify("exercice_3", "choice"));
+            System.out.println(Translations.interactNotify("exercice_4", "choice"));
+            System.out.println(Translations.interactNotify("exercice_5", "choice"));
+            System.out.println(Translations.interactNotify("exercice_6", "choice"));
+            System.out.println(Translations.interactNotify("exercice_7", "choice"));
+            System.out.println(Translations.interactNotify("exercice_8", "choice"));
+            System.out.println(Translations.interactNotify("exercice_9", "choice"));
+            System.out.println(Translations.interactNotify("exercice_10", "choice"));
+            System.out.println(Translations.interactNotify("exercice_11", "choice"));
+            System.out.println(Translations.interactNotify("exercice_selection", "info"));
             try {
                 number = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(Translations.resultNotify("entier", "error"));
+                System.out.println(Translations.interactNotify("entier", "error"));
                 return;
             }
             switch (number) {
