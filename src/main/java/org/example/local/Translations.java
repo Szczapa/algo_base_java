@@ -15,6 +15,8 @@ public class Translations {
     public static String blueTextCode = "\033[34m";
 
     static {
+        success = new HashMap<>();
+
         error = new HashMap<>();
         error.put("entier", "Erreur de saisie, nombre entier uniquement.");
         error.put("nombre", "Erreur de saisie, nombre uniquement.");
@@ -31,9 +33,6 @@ public class Translations {
         info.put("cours_selection", "Entrer le numéro du cours:");
         info.put("exercise", "Sommaire des exercices:");
         info.put("exercice_selection", "Entrer le numéro d'exercice:");
-
-
-        success = new HashMap<>();
 
         choice = new HashMap<>();
         choice.put("cours_1", "1. Variables");

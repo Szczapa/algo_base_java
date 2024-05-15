@@ -119,6 +119,8 @@ public class Interaction {
             System.out.println(Translations.interactNotify("entier", "error"));
             return;
         }
+
+        /*
         if (age >= 3 && age <= 6) {
             System.out.println(Translations.Notify("Catégorie: Baby", "success"));
         } else if (age >= 7 && age <= 8) {
@@ -129,7 +131,37 @@ public class Interaction {
             System.out.println(Translations.Notify("Catégorie: Minime", "success"));
         } else if (age >= 13) {
             System.out.println(Translations.Notify("Catégorie: Cadet", "success"));
+        } else {
+            System.out.println(Translations.Notify("Catégorie non reconnue", "error"));
         }
+        */
+
+        if (age < 3 || age > 18){
+            System.out.println(Translations.Notify("Catégorie non reconnue", "error"));
+        } else {
+            if (age <= 6) {
+                System.out.println(Translations.Notify("Catégorie: Baby", "success"));
+            } else if (age <= 8) {
+                System.out.println(Translations.Notify("Catégorie: Poussin", "success"));
+            } else if (age <= 10) {
+                System.out.println(Translations.Notify("Catégorie: Pupille", "success"));
+            } else if (age <= 12) {
+                System.out.println(Translations.Notify("Catégorie: Minime", "success"));
+            } else {
+                System.out.println(Translations.Notify("Catégorie: Cadet", "success"));
+            }
+        }
+
+    /*
+        switch (age) {
+            case 3, 4, 5, 6 -> System.out.println(Translations.Notify("Catégorie: Baby", "success"));
+            case 7, 8 -> System.out.println(Translations.Notify("Catégorie: Poussin", "success"));
+            case 9, 10 -> System.out.println(Translations.Notify("Catégorie: Pupille", "success"));
+            case 11, 12 -> System.out.println(Translations.Notify("Catégorie: Minime", "success"));
+            case 13, 14, 15, 16, 17 -> System.out.println(Translations.Notify("Catégorie: Cadet", "success"));
+            default -> System.out.println(Translations.Notify("Catégorie non reconnue", "error"));
+        }
+    */
     }
 
     public static void exercice8() {
