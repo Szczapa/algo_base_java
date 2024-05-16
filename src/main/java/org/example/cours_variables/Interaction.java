@@ -136,7 +136,7 @@ public class Interaction {
         }
         */
 
-        if (age < 3 || age > 18){
+        if (age < 3 || age > 18) {
             System.out.println(Translations.Notify("Catégorie non reconnue", "error"));
         } else {
             if (age <= 6) {
@@ -165,56 +165,39 @@ public class Interaction {
     }
 
     public static void exercice8() {
-        double ab, ba;
-        double bc, cb;
-        double ac, ca;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(Translations.Notify("Entrer la longueur du côté AB:", "info"));
-        try {
-            ab = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println(Translations.interactNotify("nombre", "error"));
-            return;
-        }
-        System.out.println(Translations.Notify("Entrer la longueur du côté BC:", "info"));
-        try {
-            bc = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println(Translations.interactNotify("nombre", "error"));
-            return;
-        }
-        System.out.println(Translations.Notify("Entrer la longueur du côté CA:", "info"));
-        try {
-            ca = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println(Translations.interactNotify("nombre", "error"));
-            return;
-        }
-        ac = ca;
-        ba = ab;
-        cb = bc;
+        int ab, bc, ac;
 
-        if (ab == ac) {
-            if (ab == bc) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
+        // Recuperation des valeurs fourni par l'utilisateur
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Veuillez saisir le longueur de AB : ");
+        ab = scanner.nextInt();
+        System.out.println("Veuillez saisir le longueur de BC : ");
+        bc = scanner.nextInt();
+        System.out.println("Veuillez saisir le longueur de AC : ");
+        ac = scanner.nextInt();
+
+
+        // Test sur les longueur
+        if (ab == bc) {
+            // le cote AB est égal à BC
+            if (bc == ac) {
+                System.out.println("Le triangle est équilatéral");
             } else {
-                System.out.println(Translations.Notify("Isocèle en A mais pas équilatérale", "success"));
-            }
-        } else if (bc == ba) {
-            if (bc == ca) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
-            } else {
-                System.out.println(Translations.Notify("Isocèle en B mais pas équilatérale", "success"));
-            }
-        } else if (cb == ca) {
-            if (cb == ab) {
-                System.out.println(Translations.Notify("Le triangle est équilatérale", "success"));
-            } else {
-                System.out.println(Translations.Notify("Isocèle en C mais pas équilatérale", "success"));
+                System.out.println("Le triangle est isocéle en B");
             }
         } else {
-            System.out.println(Translations.Notify("Le triangle n'est pas équilatérale", "success"));
+            // le cote AB n'est pas egal à BC
+            if (bc == ac) {
+                System.out.println("Le triangle est isocéle en C");
+            } else {
+                if (ab == ac) {
+                    System.out.println("Le triangle est isocéle en A");
+                } else {
+                    System.out.println("Le triangle n'est pas isocéle");
+                }
+            }
         }
+
     }
 
     public static void exercice9() {
@@ -239,14 +222,10 @@ public class Interaction {
         // taille 2 -> 160 to 178 cm && 48 to 71 kg
         // taille 3 -> 163 to 183 cm && 54 to 77 kg
 
-        if ((taille >= 145 && taille <= 169) && (masse >= 43 && masse <= 65)) {
-            System.out.println(Translations.Notify("Taille 1", "success"));
-        } else if ((taille >= 160 && taille <= 178) && (masse >= 48 && masse <= 71)) {
-            System.out.println(Translations.Notify("Taille 2", "success"));
-        } else if ((taille >= 163 && taille <= 183) && (masse >= 54 && masse <= 77)) {
-            System.out.println(Translations.Notify("Taille 3", "success"));
-        } else {
-            System.out.println(Translations.Notify("Taille non reconnue", "error"));
-        }
+        double minTaille1 = 145, maxTaille1 = 169, minMasse1 = 43, maxMasse1 = 65; // Taille 1
+        double minTaille2 = 160, maxTaille2 = 178, minMasse2 = 48, maxMasse2 = 71; // Taille 2
+        double minTaille3 = 163, maxTaille3 = 183, minMasse3 = 54, maxMasse3 = 77; // Taille 3
+
+
     }
 }
