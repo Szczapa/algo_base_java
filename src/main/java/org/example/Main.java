@@ -52,6 +52,10 @@ public class Main {
             System.out.println(Translations.interactNotify("exercice_9", "choice"));
             System.out.println(Translations.interactNotify("exercice_10", "choice"));
             System.out.println(Translations.interactNotify("exercice_11", "choice"));
+            System.out.println(Translations.interactNotify("exercice_12", "choice"));
+            System.out.println(Translations.interactNotify("exercice_13", "choice"));
+            System.out.println(Translations.interactNotify("exercice_14", "choice"));
+            System.out.println(Translations.interactNotify("exercice_15", "choice"));
             System.out.println(Translations.interactNotify("exercice_selection", "info"));
             try {
                 number = scanner.nextInt();
@@ -71,6 +75,10 @@ public class Main {
                 case 9 -> Interaction.exercice9();
                 case 10 -> Boucle.exercice10();
                 case 11 -> Boucle.exercice11();
+                case 12 -> Boucle.exercice12();
+                case 13 -> Boucle.exercice13();
+                case 14 -> Boucle.exercice14();
+                case 15 -> Boucle.exercice15();
                 default -> System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
             }
         } else {

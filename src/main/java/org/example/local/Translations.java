@@ -48,7 +48,11 @@ public class Translations {
         choice.put("exercice_8", "8. Triangle");
         choice.put("exercice_9", "9. Taille vetement");
         choice.put("exercice_10", "10. Boucle 1 et 3");
-        choice.put("exercice_11", "10. Nombre année");
+        choice.put("exercice_11", "11. Nombre année");
+        choice.put("exercice_12", "12. Table de multiplication");
+        choice.put("exercice_13", "13. Plus grand nombre");
+        choice.put("exercice_14", "14. addition de nombre entier");
+        choice.put("exercice_15", "15. multiplication des tables de 1 à 10");
 
     }
 

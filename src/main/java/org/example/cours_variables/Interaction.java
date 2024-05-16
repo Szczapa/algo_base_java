@@ -221,11 +221,57 @@ public class Interaction {
         // taille 1 -> 145 to 169 cm && 43 to 65 Kg
         // taille 2 -> 160 to 178 cm && 48 to 71 kg
         // taille 3 -> 163 to 183 cm && 54 to 77 kg
-
-        double minTaille1 = 145, maxTaille1 = 169, minMasse1 = 43, maxMasse1 = 65; // Taille 1
-        double minTaille2 = 160, maxTaille2 = 178, minMasse2 = 48, maxMasse2 = 71; // Taille 2
-        double minTaille3 = 163, maxTaille3 = 183, minMasse3 = 54, maxMasse3 = 77; // Taille 3
-
-
+        if (43 <= masse && masse <= 47) {
+            if (145 <= taille && taille <= 169) {
+                System.out.println(Translations.Notify("La personne est de taille 1", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        }
+        if (48 <= masse && masse <= 53) {
+            if (145 <= taille && taille <= 166) {
+                System.out.println(Translations.Notify("La personne est de taille 1", "success"));
+            } else if (169 <= taille && taille <= 178) {
+                System.out.println(Translations.Notify("La personne est de taille 2", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        }
+        if (54 <= masse && masse <= 59) {
+            if (145 <= taille && taille <= 163) {
+                System.out.println(Translations.Notify("La personne est de taille 1", "success"));
+            } else if (166 <= taille && taille <= 175) {
+                System.out.println(Translations.Notify("La personne est de taille 2", "success"));
+            } else if (178 <= taille && taille <= 183) {
+                System.out.println(Translations.Notify("La personne est de taille 3", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        } else if (60 <= masse && masse <= 65) {
+            System.out.println("pas bon");
+            if (145 <= taille && taille <= 160) {
+                System.out.println(Translations.Notify("La personne est de taille 1", "success"));
+            } else if (163 <= taille && taille <= 172) {
+                System.out.println(Translations.Notify("La personne est de taille 2", "success"));
+            } else if (175 <= taille && taille <= 183) {
+                System.out.println(Translations.Notify("La personne est de taille 3", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        } else if (66 <= masse && masse <= 71) {
+            if (taille <= 160 && taille <= 169) {
+                System.out.println(Translations.Notify("La personne est de taille 2", "success"));
+            } else if (taille <= 172 && taille <= 183) {
+                System.out.println(Translations.Notify("La personne est de taille 3", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        } else if (72 <= masse && masse <= 77) {
+            if (taille >= 163 && taille <= 183) {
+                System.out.println(Translations.Notify("La personne est de taille 3", "success"));
+            } else {
+                System.out.println(Translations.Notify("La personne n'est pas dans les critères", "error"));
+            }
+        }
     }
 }
