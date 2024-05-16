@@ -56,6 +56,9 @@ public class Main {
             System.out.println(Translations.interactNotify("exercice_13", "choice"));
             System.out.println(Translations.interactNotify("exercice_14", "choice"));
             System.out.println(Translations.interactNotify("exercice_15", "choice"));
+            System.out.println(Translations.interactNotify("exercice_16", "choice"));
+            System.out.println(Translations.interactNotify("exercice_17", "choice"));
+            System.out.println(Translations.interactNotify("exercice_18", "choice"));
             System.out.println(Translations.interactNotify("exercice_selection", "info"));
             try {
                 number = scanner.nextInt();
@@ -79,6 +82,9 @@ public class Main {
                 case 13 -> Boucle.exercice13();
                 case 14 -> Boucle.exercice14();
                 case 15 -> Boucle.exercice15();
+                case 16 -> Boucle.exercice16();
+                case 17 -> Boucle.exercice17();
+                case 18 -> Boucle.exercice18();
                 default -> System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
             }
         } else {

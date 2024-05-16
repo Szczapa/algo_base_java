@@ -45,9 +45,7 @@ public class Boucle {
     }
 
     public static void exercice12() {
-        int number = 0;
-
-        // print la table de multiplication de 9 en utilisant uniquement des boucles imbriqué
+        int number;
         for (int i = 1; i <= 10; i++) {
             number = 9 * i;
             System.out.println("9 * " + i + " = " + number);
@@ -55,10 +53,8 @@ public class Boucle {
     }
 
     public static void exercice13() {
-        // Ecrire un algorithme qui demande successivement 6 nombres à l’uKlisateur, et qui lui dit ensuite quel
-        //était le plus grand parmi ces 6 nombres.
         int number = 0;
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 6; i++) {
             System.out.println(Translations.Notify("Entrer un nombre entier", "info"));
@@ -91,6 +87,14 @@ public class Boucle {
             sum += i;
         }
         System.out.println(sum);
+
+        /*
+        for (int j = 0; j < number; j++) {
+        System.out.print(j+" + ");
+            sum += j;
+        }
+        System.out.println(number+" = "+(sum+number));
+        */
     }
 
     public static void exercice15() {
@@ -102,23 +106,198 @@ public class Boucle {
         }
 
         System.out.println();
-        System.out.println("Exercice 15 BIS: ");
+        System.out.println(Translations.Notify("Exercice 15BIS", "info"));
+
         int habitant = 96809;
         double accroissement = 0.89;
-        System.out.println(habitant * accroissement/100);
+//        System.out.println(habitant * accroissement / 100);
         int i;
-        for (i = 1; habitant < 120000; i++ ){
-            habitant += habitant * accroissement/100;
-            if (habitant > 120000){
+        for (i = 1; habitant < 120000; i++) {
+            habitant += habitant * accroissement / 100;
+            if (habitant > 120000) {
                 System.out.println("année " + i + " : " + habitant);
                 break;
             }
         }
-        System.out.println("il faut " + i + " ans pour atteindre 120000 habitants");
+        System.out.println(Translations.Notify("Le nombre d'année pour atteindre 120000 habitants est de " + i, "success"));
     }
 
-    public static void exercice16(){
-        
+    public static void exercice16() {
+        double maxNote = 0;
+        double minNote = 0;
+        double moyenne = 0;
+        int nombreNote = 20;
+        int choice = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < nombreNote; i++) {
+            System.out.println(Translations.Notify("Entrer une note", "info"));
+            try {
+                double note = scanner.nextDouble();
+                if (note < 0) {
+                    System.out.println(Translations.Notify("La note ne peut pas être négative", "error"));
+                    i--;
+                    continue;
+                }
+                if (i == 0) {
+                    maxNote = note;
+                    minNote = note;
+                }
+                if (maxNote < note) {
+                    maxNote = note;
+                }
+                if (minNote > note) {
+                    minNote = note;
+                }
+                moyenne += note;
+            } catch (InputMismatchException e) {
+                System.out.println(Translations.Notify("Erreur de saisie", "error"));
+                scanner.next();
+                i--;
+            }
+        }
+        moyenne = moyenne / nombreNote;
+        do {
+            System.out.println(Translations.Notify("Selectionnez ce que vous voulez afficher", "info"));
+            System.out.println(Translations.Notify("1. Note la plus haute", "choice"));
+            System.out.println(Translations.Notify("2. Note la plus basse", "choice"));
+            System.out.println(Translations.Notify("3. Moyenne des notes", "choice"));
+            System.out.println(Translations.Notify("0. Quitter", "error"));
+
+            try {
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1 ->
+                            System.out.println(Translations.Notify("La note la plus haute est: " + maxNote, "success"));
+                    case 2 ->
+                            System.out.println(Translations.Notify("La note la plus basse est: " + minNote, "success"));
+                    case 3 ->
+                            System.out.println(Translations.Notify("La moyenne des notes est: " + moyenne, "success"));
+                    case 0 -> System.out.println(Translations.Notify("Au revoir", "info"));
+                    default -> System.out.println(Translations.Notify("Erreur de saisie", "error"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(Translations.Notify("Erreur de saisie", "error"));
+                scanner.next();
+            }
+        } while (choice != 0);
+    }
+
+    public static void exercice17() {
+        double note = 0;
+        double maxNote = 0; // Double.MIN_VALUE
+        double minNote = 0; // Double.MAX_VALUE
+        double moyenne = 0;
+        int nombreNote = 0;
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+        do {
+            System.out.println(Translations.Notify("Entrer une note", "info"));
+            try {
+                note = scanner.nextDouble();
+                if (note < 0) {
+                    System.out.println(Translations.Notify("La note ne peut pas être négative", "error"));
+                    continue;
+                }
+                if (note == 0) {
+                    break;
+                }
+                /*
+                    maxNote = Math.max(maxNote, note);
+                    minNote = Math.min(minNote, note);
+                 */
+                if (nombreNote == 0) {
+                    maxNote = note;
+                    minNote = note;
+                }
+
+                if (maxNote < note) {
+                    maxNote = note;
+                }
+                if (minNote > note) {
+                    minNote = note;
+                }
+                nombreNote++;
+                moyenne += note;
+            } catch (InputMismatchException e) {
+                System.out.println(Translations.Notify("Erreur de saisie nombre uniquement", "error"));
+                scanner.next();
+            }
+        } while (true);
+
+        if (nombreNote != 0) {
+            moyenne = moyenne / nombreNote;
+        }
+        System.out.println("Veuillez entrer un nombre :");
+
+        do {
+            System.out.println(Translations.Notify("Selectionnez ce que vous voulez afficher", "info"));
+            System.out.println(Translations.Notify("1. Note la plus haute", "choice"));
+            System.out.println(Translations.Notify("2. Note la plus basse", "choice"));
+            System.out.println(Translations.Notify("3. Moyenne des notes", "choice"));
+            System.out.println(Translations.Notify("0. Quitter", "error"));
+            try {
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1 -> System.out.println(Translations.Notify("La note la plus haute est: " + maxNote, "success"));
+                    case 2 -> System.out.println(Translations.Notify("La note la plus basse est: " + minNote, "success"));
+                    case 3 -> System.out.println(Translations.Notify("La moyenne des notes est: " + moyenne, "success"));
+                    case 0 -> System.out.println(Translations.Notify("Au revoir", "info"));
+                    default -> System.out.println(Translations.Notify("Erreur de saisie", "error"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(Translations.Notify("Erreur de saisie nombre uniquement", "error"));
+                scanner.next();
+            }
+        } while (choice != 0);
+
+        System.out.println();
+        System.out.println(Translations.Notify("Exercice 17BIS", "info"));
+        System.out.println("Veuillez entrer un nombre :");
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void exercice18() {
+        int number1;
+        int number2;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Translations.Notify("Entrer un premier nombre", "info"));
+        try {
+            number1 = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println(Translations.interactNotify("entier", "error"));
+            return;
+        }
+        System.out.println(Translations.Notify("Entrer un deuxième nombre", "info"));
+        try {
+            number2 = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println(Translations.interactNotify("entier", "error"));
+            return;
+        }
+
+        int max = max_Value(number1, number2);
+        if (max != 0) {
+            System.out.println(Translations.Notify("Le plus grand nombre est: " + max, "success"));
+        } else {
+            System.out.println(Translations.Notify("Les deux nombres sont égaux", "success"));
+        }
+    }
+
+    public static int max_Value(int nombre1, int nombre2) {
+        if (nombre1 < nombre2) {
+            return nombre2;
+        } else if (nombre1 > nombre2) {
+            return nombre1;
+        }
+        return 0;
     }
 }
+
 

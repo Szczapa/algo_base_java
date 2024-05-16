@@ -42,18 +42,20 @@ public class Translations {
         choice.put("exercice_2", "2. Variables non échangées");
         choice.put("exercice_3", "3. Variables inversées");
         choice.put("exercice_4", "4. Divisible par 3");
-        choice.put("exercice_5", "5. calcul prix Photocopie");
-        choice.put("exercice_6", "6. calcul d'interet bancaire");
-        choice.put("exercice_7", "7. classement age");
+        choice.put("exercice_5", "5. Calcul prix Photocopie");
+        choice.put("exercice_6", "6. Calcul d'interet bancaire");
+        choice.put("exercice_7", "7. Classement age");
         choice.put("exercice_8", "8. Triangle");
         choice.put("exercice_9", "9. Taille vetement");
         choice.put("exercice_10", "10. Boucle 1 et 3");
         choice.put("exercice_11", "11. Nombre année");
         choice.put("exercice_12", "12. Table de multiplication");
         choice.put("exercice_13", "13. Plus grand nombre");
-        choice.put("exercice_14", "14. addition de nombre entier");
-        choice.put("exercice_15", "15. multiplication des tables de 1 à 10");
-
+        choice.put("exercice_14", "14. Addition de nombre entier");
+        choice.put("exercice_15", "15. Multiplication des tables de 1 à 10 & 15 Bis");
+        choice.put("exercice_16", "16. calcul de note");
+        choice.put("exercice_17", "17. Saisie de note infini (ou presque) & 17 Bis");
+        choice.put("exercice_18", "18. Valeur la plus grande");
     }
 
     public static String interactNotify(String textName, String textType) {
