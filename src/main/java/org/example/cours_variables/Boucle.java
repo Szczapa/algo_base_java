@@ -184,7 +184,7 @@ public class Boucle {
     }
 
     public static void exercice17() {
-        double note = 0;
+        double note;
         double maxNote = 0; // Double.MIN_VALUE
         double minNote = 0; // Double.MAX_VALUE
         double moyenne = 0;
@@ -239,9 +239,12 @@ public class Boucle {
             try {
                 choice = scanner.nextInt();
                 switch (choice) {
-                    case 1 -> System.out.println(Translations.Notify("La note la plus haute est: " + maxNote, "success"));
-                    case 2 -> System.out.println(Translations.Notify("La note la plus basse est: " + minNote, "success"));
-                    case 3 -> System.out.println(Translations.Notify("La moyenne des notes est: " + moyenne, "success"));
+                    case 1 ->
+                            System.out.println(Translations.Notify("La note la plus haute est: " + maxNote, "success"));
+                    case 2 ->
+                            System.out.println(Translations.Notify("La note la plus basse est: " + minNote, "success"));
+                    case 3 ->
+                            System.out.println(Translations.Notify("La moyenne des notes est: " + moyenne, "success"));
                     case 0 -> System.out.println(Translations.Notify("Au revoir", "info"));
                     default -> System.out.println(Translations.Notify("Erreur de saisie", "error"));
                 }
@@ -264,39 +267,38 @@ public class Boucle {
     }
 
     public static void exercice18() {
-        int number1;
-        int number2;
+        int number1 = 0;
+        int number2 = 0;
         Scanner scanner = new Scanner(System.in);
-        System.out.println(Translations.Notify("Entrer un premier nombre", "info"));
-        try {
-            number1 = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println(Translations.interactNotify("entier", "error"));
-            return;
-        }
-        System.out.println(Translations.Notify("Entrer un deuxième nombre", "info"));
-        try {
-            number2 = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println(Translations.interactNotify("entier", "error"));
-            return;
-        }
 
-        int max = max_Value(number1, number2);
-        if (max != 0) {
-            System.out.println(Translations.Notify("Le plus grand nombre est: " + max, "success"));
-        } else {
-            System.out.println(Translations.Notify("Les deux nombres sont égaux", "success"));
+        for (int i = 0; i < 2; i++) {
+            System.out.println(Translations.Notify("Entrer nombre " + (i + 1) + " :", "info"));
+            try {
+                if (i == 0) {
+                    number1 = scanner.nextInt();
+                } else {
+                    number2 = scanner.nextInt();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(Translations.interactNotify("entier", "error"));
+                scanner.next();
+                i--;
+            }
         }
+        String max = max_Value(number1, number2);
+        System.out.println(Translations.Notify(max, "success"));
     }
 
-    public static int max_Value(int nombre1, int nombre2) {
+    public static String max_Value(int nombre1, int nombre2) {
+
+//        return (nombre1 < nombre2) ? "Le plus grand nombre est " + nombre2 : "Le plus grand nombre est " + nombre1;
+
         if (nombre1 < nombre2) {
-            return nombre2;
+            return "Le plus grand nombre est: " + nombre2;
         } else if (nombre1 > nombre2) {
-            return nombre1;
+            return "Le plus grand nombre est: " + nombre1;
         }
-        return 0;
+        return "Les deux nombres sont égaux";
     }
 }
 

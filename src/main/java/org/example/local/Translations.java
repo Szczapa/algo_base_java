@@ -56,6 +56,9 @@ public class Translations {
         choice.put("exercice_16", "16. calcul de note");
         choice.put("exercice_17", "17. Saisie de note infini (ou presque) & 17 Bis");
         choice.put("exercice_18", "18. Valeur la plus grande");
+        choice.put("exercice_19", "19. Avant dernière note");
+        choice.put("exercice_20", "20. Saisie de note");
+        choice.put("exercice_21", "21. Tableau multi-dimensionnel");
     }
 
     public static String interactNotify(String textName, String textType) {

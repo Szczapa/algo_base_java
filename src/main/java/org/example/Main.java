@@ -3,6 +3,7 @@ package org.example;
 import org.example.cours_variables.Boucle;
 import org.example.cours_variables.Interaction;
 import org.example.cours_variables.Variables;
+import org.example.cours_variables.Tableaux;
 import org.example.local.Translations;
 
 import java.util.InputMismatchException;
@@ -59,6 +60,9 @@ public class Main {
             System.out.println(Translations.interactNotify("exercice_16", "choice"));
             System.out.println(Translations.interactNotify("exercice_17", "choice"));
             System.out.println(Translations.interactNotify("exercice_18", "choice"));
+            System.out.println(Translations.interactNotify("exercice_19", "choice"));
+            System.out.println(Translations.interactNotify("exercice_20", "choice"));
+            System.out.println(Translations.interactNotify("exercice_21", "choice"));
             System.out.println(Translations.interactNotify("exercice_selection", "info"));
             try {
                 number = scanner.nextInt();
@@ -85,6 +89,9 @@ public class Main {
                 case 16 -> Boucle.exercice16();
                 case 17 -> Boucle.exercice17();
                 case 18 -> Boucle.exercice18();
+                case 19 -> Tableaux.exercice19();
+                case 20 -> Tableaux.exercice20();
+                case 21 -> Tableaux.exercice21();
                 default -> System.out.println(Translations.Notify("exercice " + number + " non trouvé.", "error"));
             }
         } else {
